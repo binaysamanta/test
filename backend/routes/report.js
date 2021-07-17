@@ -29,7 +29,7 @@ router.route('/add').post((req,res)=>{
 
 
   //Earning Report for vendor
-  router.route('/getReport/:fromdate/:todate').get((req, res) => {
+  router.route('/search/:fromdate/:todate').get((req, res) => {
   
       //var start = new Date(new Date(req.params.fromdate).setHours(00, 00, 00));
       //var end = new Date(new Date(req.params.todate).setHours(23, 59, 59));
