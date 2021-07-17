@@ -29,12 +29,12 @@ router.route('/add').post((req,res)=>{
 
 
   //Earning Report for vendor
-  router.route('/search/:fromdate/:todate').get((req, res) => {
+  router.route('/search/:startDate/:todate').get((req, res) => {
   
-      //var start = new Date(new Date(req.params.fromdate).setHours(00, 00, 00));
-      //var end = new Date(new Date(req.params.todate).setHours(23, 59, 59));
-      var start = req.params.fromdate;
-      var end = req.params.todate;
+      //var start = new Date(new Date(req.params.startDate).setHours(00, 00, 00));
+      //var end = new Date(new Date(req.params.endDate).setHours(23, 59, 59));
+      var start = req.params.startDate;
+      var end = req.params.endDate;
   
       
         Reports.find({ createdAt: {$gte: start, $lt: end},})
