@@ -29,7 +29,7 @@ router.route('/add').post((req,res)=>{
 
 
   //Earning Report for vendor
-  router.route('/search').get((req, res) => {
+  router.route('/search').post((req, res) => {
   
       //var start = new Date(new Date(req.params.startDate).setHours(00, 00, 00));
       //var end = new Date(new Date(req.params.endDate).setHours(23, 59, 59));
