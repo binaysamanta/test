@@ -30,13 +30,11 @@ router.route('/add').post((req,res)=>{
 
   //Earning Report for vendor
   router.route('/getReport/:fromdate/:todate').get((req, res) => {
-    //router.post('/getEarning_report',(req,res)=>{
   
-      var start = new Date(new Date(req.params.fromdate).setHours(00, 00, 00));
-      console.log(start);
-    
-      var end = new Date(new Date(req.params.todate).setHours(23, 59, 59));
-      console.log(end);
+      //var start = new Date(new Date(req.params.fromdate).setHours(00, 00, 00));
+      //var end = new Date(new Date(req.params.todate).setHours(23, 59, 59));
+      var start = req.params.fromdate;
+      var end = req.params.todate;
   
       
         Reports.find({ createdAt: {$gte: start, $lt: end},})
@@ -86,7 +84,7 @@ router.route('/add').post((req,res)=>{
               let fileName = "Report-"+Moment(req.params.fromdate).format('DD-MM-YYYY')+"-"+Moment(req.params.todate).format('DD-MM-YYYY') + ".xlsx";
   
               workbook.xlsx.writeFile("./uploads/report.xlsx").then(function() {
-                res.status(200).send({ success: "/backend/uploads/" + fileName });
+                res.status(200).send({ path: "/backend/uploads/" + fileName });
             });
 
           });

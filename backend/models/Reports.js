@@ -12,8 +12,7 @@ const ReportsSchema = new Schema({
         type: String,
     },
     createdAt: {
-        type: Date,
-        default: Date.now
+        type: String,
     },
     date: {
         type: Date,
